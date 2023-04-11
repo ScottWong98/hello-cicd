@@ -1,9 +1,14 @@
-name: pre-commit
-
-on: [push]
+name:
+ pre-commit
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
